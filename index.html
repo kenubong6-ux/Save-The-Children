@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save the Children | August Berlinger's Campaign</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for Inter font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-blue': '#006B97',
+                        'secondary-red': '#E4002B',
+                        'background-light': '#F8FAFC',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Set default font and background */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <!-- Main Campaign Card -->
+    <div class="w-full max-w-lg bg-white shadow-xl rounded-2xl overflow-hidden">
+        
+        <!-- Header Section -->
+        <div class="bg-primary-blue text-white p-6 rounded-t-2xl">
+            <h1 class="text-3xl font-extrabold mb-1">
+                <span class="text-secondary-red">Save the Children</span> Campaign
+            </h1>
+            <!-- Updated Name -->
+            <p class="text-lg font-light opacity-90">Supporting Kids Globally: August Berlinger's Fundraiser</p>
+        </div>
+
+        <!-- Content Section -->
+        <div class="p-6 space-y-6">
+
+            <!-- Placeholder Image/Visual -->
+            <div class="rounded-xl overflow-hidden shadow-lg">
+                <img src="https://placehold.co/800x200/006B97/ffffff?text=Make+A+Difference+Today" 
+                     alt="A placeholder visual for the Save the Children campaign" 
+                     class="w-full h-auto object-cover">
+            </div>
+
+            <!-- Trust & Transparency -->
+            <div class="border border-primary-blue/30 bg-primary-blue/5 p-4 rounded-xl">
+                <p class="font-semibold text-primary-blue flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    Official & Transparent Channel
+                </p>
+                <p class="text-sm text-gray-700 mt-1">
+                    All donations are processed securely through my management channel via Telegram, ensuring every penny is tracked and goes directly to Save the Children's programs.
+                </p>
+            </div>
+
+            <!-- Impact Points -->
+            <h2 class="text-xl font-bold text-gray-800 pt-2">Your Donation's Impact:</h2>
+            <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start">
+                    <span class="text-secondary-red text-xl mr-3 leading-none">•</span>
+                    <div>
+                        <strong class="font-medium">Education:</strong> Providing school supplies, uniforms, and access to learning for children in underprivileged areas.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-secondary-red text-xl mr-3 leading-none">•</span>
+                    <div>
+                        <strong class="font-medium">Health & Nutrition:</strong> Ensuring kids get proper medical care and nutritious meals to thrive.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-secondary-red text-xl mr-3 leading-none">•</span>
+                    <div>
+                        <strong class="font-medium">Emergency Relief:</strong> Supporting children and families affected by disasters or conflict worldwide.
+                    </div>
+                </li>
+            </ul>
+
+            <!-- Example Impact -->
+            <p class="text-center italic text-sm text-gray-600 border-t pt-4">
+                $20 can cover school supplies for one child for an entire year.
+            </p>
+
+            <!-- Call to Action Section -->
+            <div class="pt-4 border-t-2 border-gray-100">
+                <p class="text-lg font-semibold text-center mb-4">Click below to contact management via Telegram and contribute:</p>
+
+                <!-- 1. Primary CTA Button (Updated Link) -->
+                <a id="donation-link" href="https://t.me/August_BOfficial" target="_blank" class="w-full block text-center bg-secondary-red hover:bg-secondary-red/90 text-white font-extrabold py-3 px-6 rounded-lg shadow-xl transition duration-300 transform hover:scale-[1.02]">
+                    CONTACT MANAGEMENT VIA TELEGRAM
+                </a>
+
+                <!-- 2. Display Link for Copying -->
+                <div class="mt-4">
+                    <label for="link-input" class="block text-sm font-medium text-gray-500 mb-1">Telegram Link (For Manual Copy):</label>
+                    <div class="flex">
+                        <input type="text" id="link-input" readonly class="flex-grow p-2 text-sm bg-gray-100 border border-gray-300 rounded-l-lg focus:outline-none" value="https://t.me/August_BOfficial">
+                        <button onclick="copyLink()" class="bg-primary-blue hover:bg-primary-blue/90 text-white text-sm font-semibold p-2 rounded-r-lg flex-shrink-0 transition duration-300">
+                            Copy
+                        </button>
+                    </div>
+                    <p id="copy-message" class="text-xs mt-2 text-green-600 opacity-0 transition duration-500 h-4"></p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-gray-50 p-4 text-center text-xs text-gray-500 rounded-b-2xl">
+            Thank you for helping us make a difference.
+        </div>
+    </div>
+
+    <script>
+        // Set the actual secure donation link here (Telegram Link)
+        const SECURE_DONATION_URL = "https://t.me/August_BOfficial"; 
+        
+        // Update the anchor tag and input field with the actual link
+        document.getElementById('donation-link').href = SECURE_DONATION_URL;
+        document.getElementById('link-input').value = SECURE_DONATION_URL;
+
+        // Function to copy the link to the clipboard
+        function copyLink() {
+            const copyText = document.getElementById("link-input");
+            
+            // Select the text field
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // For mobile devices
+
+            const message = document.getElementById('copy-message');
+
+            try {
+                // Use the document.execCommand('copy') method for reliable clipboard access in iFrames
+                document.execCommand('copy');
+                message.textContent = "Link copied successfully!";
+                message.classList.remove('opacity-0');
+                
+                // Fade out the message after 2 seconds
+                setTimeout(() => {
+                    message.classList.add('opacity-0');
+                    message.textContent = "";
+                }, 2000);
+
+            } catch (err) {
+                message.textContent = "Copy failed. Please copy manually.";
+                message.classList.remove('opacity-0');
+                message.classList.add('text-secondary-red');
+                setTimeout(() => {
+                    message.classList.add('opacity-0');
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>
+
